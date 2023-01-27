@@ -4,7 +4,6 @@ class Comment < ApplicationRecord
 
   after_save :update_CommentCounter
 
-
   def update_likes_counter
     author.update(CommentCounter: author.comments.count)
   end
