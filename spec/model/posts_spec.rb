@@ -35,17 +35,17 @@ RSpec.describe User, type: :model do
 
   describe 'Check for post methods' do
     before do
-        @user2 = User.create(id: 1, Name: 'Kenny', Bio: 'I am the greatest being alive', PostCounter: 1, Photo: 'https://google.com/googleIcon.png')
+      @user2 = User.create(id: 1, Name: 'Kenny', Bio: 'I am the greatest being alive', PostCounter: 1, Photo: 'https://google.com/googleIcon.png')
 
-        @post2 = Post.create(title: 'Love', text: 'My everthing', author_id: 1, CommentCounter: 1, LikesCounter: 0)
+      @post2 = Post.create(title: 'Love', text: 'My everthing', author_id: 1, CommentCounter: 1, LikesCounter: 0)
 
-        6.times do
-            Comment.create(author_id: @user2, post_id: @post2, text: 'Is she not beautiful?')
-        end
+      6.times do
+        Comment.create(author_id: @user2, post_id: @post2, text: 'Is she not beautiful?')
+      end
     end
 
     it 'return array of 5 recent comments' do
-        expect(@post).to respond_to(:five_recent_comments)
+      expect(@post).to respond_to(:five_recent_comments)
     end
   end
 end

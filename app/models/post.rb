@@ -6,9 +6,9 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 250 }
   validates :CommentCounter, :LikesCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  after_save :update_PostCounter
+  after_save :update_post_counter
 
-  def update_PostCounter
+  def update_post_counter
     author.update(PostCounter: author.posts.count)
   end
 
