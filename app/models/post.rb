@@ -8,7 +8,7 @@ class Post < ApplicationRecord
 
   after_save :update_PostCounter
 
-  def update_posts_counter
+  def update_PostCounter
     author.update(PostCounter: author.posts.count)
   end
 

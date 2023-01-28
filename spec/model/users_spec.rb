@@ -20,4 +20,18 @@ RSpec.describe User, type: :model do
     @user.PostCounter = 'Random'
     expect(@user).to_not be_valid
   end
+
+  describe 'check methods' do
+    before do
+        @user1 = User.create(Name: 'Ken', Photo: 'https://ww.googlecom/google,png', Bio:'I ama  gauas', PostCounter: 1)
+
+        5.times do
+            Post.create(title: 'Love', text: 'My everthing', author_id: 1, CommentCounter: 1, LikesCounter: 0)
+        end
+    end
+
+    it 'returns last 3posts' do
+        expect(@user1.three_posts).to match_array(@user1.posts.last(3))
+    end
+  end
 end

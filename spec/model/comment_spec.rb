@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
     @post = Post.new(id: 1, title: 'Love', text: 'My everthing', author: @user, author_id: 1, CommentCounter: 1,
                      LikesCounter: 0)
 
-    @comment = Comment.new(user: @user, posts: @post, text: 'Is she not beautiful?')
+    @comment = Comment.new(author: @user, posts: @post, text: 'Is she not beautiful?')
   end
 
   it 'check if user is valid' do
