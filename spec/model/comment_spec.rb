@@ -22,4 +22,8 @@ RSpec.describe User, type: :model do
   it 'check if comment is valid' do
     expect(@comment).to be_valid
   end
+
+  it 'update comment counter' do
+    expect(@comment.update_comment_counter).to be(true)
+  end
 end

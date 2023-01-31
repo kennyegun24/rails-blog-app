@@ -51,5 +51,9 @@ RSpec.describe User, type: :model do
     it 'should return array of 5' do
       expect(@post2.five_recent_comments.length).to eql(5)
     end
+
+    it 'should not return an empty array' do
+      expect(@post2.five_recent_comments.length).to_not eql(0)
+    end
   end
 end
