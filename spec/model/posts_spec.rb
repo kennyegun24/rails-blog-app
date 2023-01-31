@@ -37,15 +37,19 @@ RSpec.describe User, type: :model do
     before do
       @user2 = User.create(id: 1, Name: 'Kenny', Bio: 'I am the greatest being alive', PostCounter: 1, Photo: 'https://google.com/googleIcon.png')
 
-      @post2 = Post.create(title: 'Love', text: 'My everthing', author_id: 1, CommentCounter: 1, LikesCounter: 0)
+      @post2 = Post.create(title: 'Love', text: 'My everthing', author: @user2, CommentCounter: 0, LikesCounter: 0)
 
       6.times do
-        Comment.create(author_id: @user2, post_id: @post2, text: 'Is she not beautiful?')
+        Comment.create(author: @user2, post: @post2, text: 'Is she not beautiful?')
       end
     end
 
     it 'return array of 5 recent comments' do
       expect(@post).to respond_to(:five_recent_comments)
+    end
+
+    it 'should return array of 5' do
+      expect(@post2.five_recent_comments.length).to eql(5)
     end
   end
 end
