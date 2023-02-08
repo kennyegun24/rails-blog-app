@@ -18,7 +18,6 @@ RSpec.describe 'Posts', type: :request do
         get '/users/:user_id/posts/:id'
         expect(response).to have_http_status(200)
         expect(response).to render_template(:show)
-        expect(response).to not_have_http_status(400)
         expect(response.body).to include('Shows info of a single post')
       end
     end
