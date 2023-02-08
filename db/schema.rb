@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_31_110920) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_08_101437) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_31_110920) do
     t.string "Name"
     t.string "Photo"
     t.text "Bio"
-    t.integer "PostCounter"
+    t.integer "PostCounter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
