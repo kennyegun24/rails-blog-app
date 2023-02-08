@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :each do
-    @user = User.new(id: 1, Name: 'Kenny', Bio: 'I am the greatest being alive', PostCounter: 1,
+    @user = User.new(id: 1, Name: 'Kenny', Bio: 'I am the greatest being alive',
                      Photo: 'https://google.com/googleIcon.png')
 
-    @post = Post.new(title: 'Love', text: 'My everthing', author_id: 1, CommentCounter: 1, LikesCounter: 0)
+    @post = Post.new(title: 'Love', text: 'My everthing', author_id: 1)
   end
 
   it 'title must not be blank' do
