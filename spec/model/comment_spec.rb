@@ -2,11 +2,10 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :each do
-    @user = User.new(id: 1, Name: 'Kenny', Bio: 'I am the greatest being alive', PostCounter: 1,
+    @user = User.new(id: 1, Name: 'Kenny', Bio: 'I am the greatest being alive',
                      Photo: 'https://google.com/googleIcon.png')
 
-    @post = Post.new(id: 1, title: 'Love', text: 'My everthing', author: @user, author_id: 1, CommentCounter: 1,
-                     LikesCounter: 0)
+    @post = Post.new(id: 1, title: 'Love', text: 'My everthing', author: @user, author_id: 1)
 
     @comment = Comment.new(author: @user, post: @post, text: 'Is she not beautiful?')
   end
