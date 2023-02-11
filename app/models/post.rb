@@ -9,10 +9,14 @@ class Post < ApplicationRecord
   after_create :update_post_counter
 
   def update_post_counter
-    author.update(PostCounter: author.posts.all.length)
+    author.update(PostCounter: author.posts.all.count)
   end
 
   def five_recent_comments
     comments.order(created_at: :desc).limit(5)
   end
+
+  # def comments
+  #   comments.order(created_at: :desc)
+  # end
 end

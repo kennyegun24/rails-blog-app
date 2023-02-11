@@ -1,2 +1,30 @@
-<h1>Posts</h1>
-<p> Shows info of a single post</p>
+<div class='center2'>
+    <div class='border'>
+        <div class='flex jstSbt'>
+            Post by <%= @post.author.Name %>
+            <div>
+                Comments : <%= @post.CommentCounter %>,
+                Likes : <%= @post.LikesCounter %>
+            </div>
+        </div>
+
+        <div>
+            <%= @post.title %>
+        </div>
+    </div>
+
+    <div class='border'>
+    <% if @post.comments.count.zero? %>
+    <p> Post has no comments yet </p>
+    <% else %>
+    <% @post.comments.each do |comment| %>
+        <div>
+            <%= comment.author.Name %>:
+            <%= comment.text %> 
+        </div>
+        <div>
+        </div>
+    <% end %>
+    <% end %>
+</div>
+</div>

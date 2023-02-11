@@ -13,3 +13,77 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+}
+
+.jstSbt {
+  justify-content: space-between;
+}
+
+.gap {
+  gap: 1rem;
+}
+
+.gap2 {
+  gap: 0.2rem;
+}
+
+.border {
+  border: 1px solid #111;
+
+  /* width: fit-content; */
+  width: 90%;
+  padding: 1rem;
+  gap: 1rem;
+  position: relative;
+}
+
+.bottom_flex {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+.userDiv {
+  display: flex;
+  gap: 1rem;
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.center,
+.center2 {
+  display: flex;
+
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+
+  /* width: 100%; */
+
+  /* margin: auto; */
+
+  /* gap: 1rem; */
+}
+
+.column {
+  flex-direction: column;
+}
+
+.borBtm {
+  margin-bottom: 0.5rem;
+  width: 95%;
+}
+
+.border2 {
+  border: 1px solid #111;
+}
