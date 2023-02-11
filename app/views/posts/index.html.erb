@@ -1,2 +1,43 @@
-<h1> Post </h1>
-<p> Lists of all posts </p>
+<div class='center'>
+    <div class='flex '>
+        <div> <%= image_tag @user.Photo %> </div>
+        <div class='border'>
+            <%= @user.Name %>
+            <div class='bottom_flex'>
+                <%= @user.PostCounter %>
+            </div>
+        </div>
+            </div>
+                    <% @posts.each do |post| %>
+ 
+                       <div class='borBtm'>
+                       <div class='border'>
+                            <div>
+                            <p> post </p>
+                                <%= link_to post.title, user_post_path(@user.id, post.id)%>
+                            </div>
+                            <div>
+                                <%= post.CommentCounter %>
+                            </div>
+                            <div>
+                                <%= post.LikesCounter %>
+                            </div>
+                        </div>
+                        <% if post.five_recent_comments.count.zero? %>
+                        <p class='border'> No comments on this post yet <p>
+                        <% else %>
+                        <div class='border'>
+                            <% post.five_recent_comments.each do |post| %>
+                                <div>
+                                    <%= post.text %>
+                                </div>
+                            <% end %>
+                            <% end %>
+                        </div>
+                        <% %>
+                        </div>
+                    <% end %>
+                </div>
+
+    </div>
+</div>

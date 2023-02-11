@@ -1,3 +1,31 @@
-<h1> User </h1>
+<div class='center'>
+    <div class="flex">
+        <div>
+            <%= image_tag @user.Photo %>
+        </div>
+        <div class="border">
+            <div>
+                <%= @user.Name %>
+            </div>
+            <div class='bottom_flex'>
+                <%= "Number of posts: #{@user.PostCounter} " %>
+            </div>
+        </div>
+    </div>
+    <div class='border'>
+        <p>Bio</p>
+        <%= @user.Bio %>
+    </div>
 
-<p> Show list of all users</p>
+    <div class='borBtm'>
+        <% @user.three_posts.each do |post| %>
+            <div class='border borBtm'>
+                <%= post.title %>
+            </div>
+        <% end %>
+    </div>
+
+    <button>
+    <%= link_to "See all posts" , user_posts_path(@user.id) %>
+</button>
+</div>
