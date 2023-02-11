@@ -53,7 +53,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 School Library <a name="about-project"></a>
+# 📖 Blog app <a name="about-project"></a>
 
 Blog app is a project built with ruby on rails(ROR). This web app serves as an online blogs where people can create their personal accounts and also post new articles and can also comment and like other posts as well as theirs
 
