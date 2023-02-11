@@ -12,8 +12,8 @@
  
                        <div class='borBtm'>
                        <div class='border'>
-                            <div class='flex gap2'>
-                            <p>Post:</p>
+                            <div class='flex column'>
+                                <%= "Post: #{post.id}" %>
                                 <%=link_to post.title, user_post_path(@user.id, post.id)%>
                             </div>
                             <div>

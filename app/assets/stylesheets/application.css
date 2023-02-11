@@ -75,6 +75,10 @@
   /* gap: 1rem; */
 }
 
+.column {
+  flex-direction: column;
+}
+
 .borBtm {
   margin-bottom: 0.5rem;
   width: 95%;
