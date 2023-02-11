@@ -22,6 +22,10 @@
                             <div>
                                 <%= " Likes: #{post.LikesCounter}" %>
                             </div>
+
+                            <%= form_with url: "/users/#{@user.id}/posts/#{post.id}/likes" do |form| %>
+                                <%= form.submit "Like Post" %>
+                            <% end %>
                         </div>
                         <% if post.five_recent_comments.count.zero? %>
                         <p class='border'> No comments on this post yet <p>
