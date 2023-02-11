@@ -1,0 +1,15 @@
+<h1 class="text-blue-600 mt-36">Add A New Post</h1>
+<%= form_with model: @post, url: user_posts_path, method: :post, local: true, scope: :new_post do |form| %>
+  <div class="bg-blue-200 p-4 rounded">
+    <div class="mb-4">
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :text %><br>
+      <%= form.text_area :text, rows: 9 %>
+    </div>
+    <%= form.submit "Click to Add Post" %>
+  </div>
+<% end %>
