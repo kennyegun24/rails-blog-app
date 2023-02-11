@@ -19,8 +19,20 @@
 
     <div class='borBtm'>
         <% @user.three_posts.each do |post| %>
-            <div class='border borBtm'>
-                <%= post.title %>
+            <div class='border borBtm flex jstSbt'>
+                <div>
+                    <div>
+                        <%= " Post: #{post.title }"%>
+                    </div>
+                    </br>
+                    <div>
+                        <%= " Text: #{post.text}" %>
+                    </div>
+                </div>
+                <div>
+                    <%= "Comments: #{post.CommentCounter}" %>
+                    <%= "Likes: #{post.LikesCounter}" %>
+                </div>
             </div>
         <% end %>
     </div>

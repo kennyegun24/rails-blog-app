@@ -12,15 +12,15 @@
  
                        <div class='borBtm'>
                        <div class='border'>
-                            <div>
-                            <p> post </p>
-                                <%= link_to post.title, user_post_path(@user.id, post.id)%>
+                            <div class='flex gap2'>
+                            <p>Post:</p>
+                                <%=link_to post.title, user_post_path(@user.id, post.id)%>
                             </div>
                             <div>
-                                <%= post.CommentCounter %>
+                                <%= "Comments: #{post.CommentCounter}" %>
                             </div>
                             <div>
-                                <%= post.LikesCounter %>
+                                <%= " Likes: #{post.LikesCounter}" %>
                             </div>
                         </div>
                         <% if post.five_recent_comments.count.zero? %>
@@ -29,6 +29,7 @@
                         <div class='border'>
                             <% post.five_recent_comments.each do |post| %>
                                 <div>
+                                <%= "#{post.author.Name}:" %>
                                     <%= post.text %>
                                 </div>
                             <% end %>
