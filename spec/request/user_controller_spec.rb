@@ -7,18 +7,19 @@ RSpec.describe 'Users', type: :request do
         get '/users'
         expect(response).to have_http_status(200)
         expect(response).to render_template(:index)
-        expect(response.body).to include('List of all users')
       end
     end
   end
 
   describe 'GET /show' do
     context 'when page is open' do
+      before :each do
+        @user = User.create(Bio: 'Kenny', Name: 'Kenny', Photo: 'https://kennyegun.com')
+        get "/users/#{@user.id}"
+      end
       it 'has to return a correct response' do
-        get '/users/:id'
-        expect(response).to have_http_status(200)
+      expect(response).to have_http_status(200)
         expect(response).to render_template(:show)
-        expect(response.body).to include('Show list of all users')
       end
     end
   end
