@@ -22,6 +22,10 @@
                             <div>
                                 <%= " Likes: #{post.LikesCounter}" %>
                             </div>
+
+                            <%= form_with url: "/users/#{@user.id}/posts/#{post.id}/likes" do |form| %>
+                                <%= form.submit "Like Post" %>
+                            <% end %>
                         </div>
                         <% if post.five_recent_comments.count.zero? %>
                         <p class='border'> No comments on this post yet <p>
@@ -41,4 +45,7 @@
                 </div>
 
     </div>
+    <section>
+    <button><%= link_to 'Create a new post', new_user_post_path(@user.id) %></button>
+    </section>
 </div>

@@ -1,0 +1,18 @@
+<div class='center'>
+    <div>
+        <%= "Total number of users: #{@users.length}" %>
+    </div>
+    <% @users.each do |user| %>
+        <div class='userDiv'>
+            <div>
+                <%= image_tag user.Photo %>
+            </div>
+            <div class='border flex'>
+                <%= link_to user.Name, user %>
+                <div class='bottom_flex'>
+                    <%= "Number of posts: #{user.PostCounter}" %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
