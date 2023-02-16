@@ -18,7 +18,7 @@ RSpec.describe 'Users', type: :request do
         get "/users/#{@user.id}"
       end
       it 'has to return a correct response' do
-      expect(response).to have_http_status(200)
+        expect(response).to have_http_status(200)
         expect(response).to render_template(:show)
       end
     end
