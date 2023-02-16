@@ -27,11 +27,11 @@
                                 <%= form.submit "Like Post" %>
                             <% end %>
                         </div>
-                        <% if post.five_recent_comments.count.zero? %>
+                        <% if post.five_recent_comments.includes([:author]).count.zero? %>
                         <p class='border'> No comments on this post yet <p>
                         <% else %>
                         <div class='border'>
-                            <% post.five_recent_comments.each do |post| %>
+                            <% post.five_recent_comments.includes([:author]).each do |post| %>
                                 <div>
                                 <%= "#{post.author.Name}:" %>
                                     <%= post.text %>
